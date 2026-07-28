@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-body: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-display: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+
+  /* Palette façon Facebook */
+  --color-fb: #1877F2;
+  --color-fb-dark: #166FE5;
+  --color-fb-light: #E7F3FF;
+  --color-bg: #F0F2F5;
+  --color-card: #FFFFFF;
+  --color-ink: #050505;
+  --color-ink2: #65676B;
+  --color-border: #CED0D4;
+  --color-hover: #F2F2F2;
+  --color-green: #31A24C;
+  --color-green-dark: #2A8C41;
+  --color-red: #FA383E;
+  --color-marigold: #F5A623;
+
+  /* alias conservés pour compat interne */
+  --color-sand: #F0F2F5;
+  --color-sand-dark: #CED0D4;
+  --color-indigo: #1877F2;
+  --color-indigo-light: #166FE5;
+  --color-clay: #1877F2;
+  --color-clay-dark: #166FE5;
+  --color-teal: #31A24C;
+  --color-teal-light: #2A8C41;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 999px;
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-fb);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
